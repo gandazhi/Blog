@@ -9,7 +9,7 @@ from django.contrib.auth.models import models
 
 
 class Blog(models.Model):
-    image = models.ImageField(upload_to='image/%Y/%m', max_length=50, verbose_name=u'文章图片')
+    image = models.ImageField(upload_to='blog_image/%Y/%m', max_length=50, verbose_name=u'文章图片')
     title = models.CharField(max_length=20, verbose_name=u'文章title')
     content = models.TextField(verbose_name=u'blog文章内容')
     is_banner = models.BooleanField(default=False, verbose_name=u'是否banner')

@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.views.static import serve
 import xadmin
 
-from blog.views import BlogView
+from blog.views import BlogView, IndexView
 from settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^xadmin/', include(xadmin.site.urls)),
     url(r'^blog/$', BlogView.as_view(), name='blog'),
+    url('^$', IndexView.as_view(), name='index'),
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
     # url(r'^static/(?P<path>.*)$', serve, {'document_root': STATIC_ROOT}),
 ]

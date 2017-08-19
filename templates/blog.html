@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
     <!-- Theme style  -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
 
     <!-- Modernizr JS -->
     <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
@@ -104,19 +105,21 @@
             </div>
             <div class="pager">
                 {% if blogs.has_previous %}
-                    <a href="?{{ blogs.previous_page_number.querystring }}">上一页</a>
+                    <a class="page" href="?{{ blogs.previous_page_number.querystring }}">上一页</a>
                 {% endif %}
                 {% for page in blogs.pages %}
                     {% if page %}
                         {% ifequal page blogs.number %}
-                            <a href="{{ page.querystring }}">{{ page }}</a>
+                            <a class="pitchOn">{{ page }}</a>
+                        {% else %}
+                            <a class="page" href="?{{ page.querystring }}">{{ page }}</a>
                         {% endifequal %}
-                    {% else %}
-                        <a href="{{ page.querystring }}">{{ page }}</a>
+                        {% else %}
+                            <a class="pitchOn">...</a>
                     {% endif %}
                 {% endfor %}
                 {% if blogs.has_next %}
-                    <a href="?{{ blogs.next_page_number.querystring }}">下一页</a>
+                    <a class="page" href="?{{ blogs.next_page_number.querystring }}">下一页</a>
                 {% endif %}
 
             </div>

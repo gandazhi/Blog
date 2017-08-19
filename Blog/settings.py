@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'xadmin',
     'crispy_forms',
     'pure_pagination',
+    'DjangoUeditor'
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 PAGINATION_SETTINGS = {
     'PAGE_RANGE_DISPLAYED': 5,
-    'MARGIN_PAGES_DISPLAYED': 1,
+    'MARGIN_PAGES_DISPLAYED': 2,
 
     'SHOW_FIRST_PAGE_WHEN_INVALID': True,
 }

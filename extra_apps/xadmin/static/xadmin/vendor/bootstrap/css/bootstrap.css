@@ -7096,3 +7096,7 @@ td.visible-print {
     display: none !important;
   }
 }
+
+.page {
+  border: 1px solid #e1e2e3;
+}

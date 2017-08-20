@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.static import serve
 import xadmin
 
-from blog.views import BlogView, IndexView
+from blog.views import BlogView, IndexView, BlogDetails
 from settings import MEDIA_ROOT
 
 urlpatterns = [
@@ -27,5 +27,6 @@ urlpatterns = [
     url('^$', IndexView.as_view(), name='index'),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
+    url(r'^blog_detail/(?P<blog_id>\d+)/$', BlogDetails.as_view(), name='blog_detail'),
     # url(r'^static/(?P<path>.*)$', serve, {'document_root': STATIC_ROOT}),
 ]

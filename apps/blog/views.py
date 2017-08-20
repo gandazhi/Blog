@@ -28,3 +28,11 @@ class IndexView(View):
         banners = Banner.objects.all().order_by('-add_time')
         recommend_blogs = Blog.objects.filter(is_recommend=True)
         return render(request, 'index.html', {'banners': banners, 'recommend_blogs': recommend_blogs})
+
+
+class BlogDetails(View):
+    def get(self, request, blog_id):
+        blog = Blog.objects.get(id=int(blog_id))
+        blog.click_num += 1
+        blog.save()
+        return render(request, 'about.html', {'blog': blog})

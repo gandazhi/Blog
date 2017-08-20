@@ -94,7 +94,7 @@
                 {% for recommend_blog in recommend_blogs %}
                     <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
                         <div class="blog-entry">
-                            <a href="#" class="blog-img"><img src="{{ MEDIA_URL }}{{ recommend_blog.image }}"
+                            <a href="{% url 'blog_detail' recommend_blog.id %}" class="blog-img"><img src="{{ MEDIA_URL }}{{ recommend_blog.image }}"
                                                               class="img-responsive"
                                                               alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
                             <div class="desc">

@@ -21,6 +21,7 @@ class Blog(models.Model):
     add_time = models.DateTimeField(default=datetime.now, verbose_name=u'添加时间')
     update_time = models.DateTimeField(default=datetime.now, verbose_name=u'修改时间')
     desc = models.CharField(max_length=50, verbose_name=u'blog描述', default='')
+    desc2 = models.CharField(max_length=300, verbose_name=u'blog详情页描述', default='')
 
     class Meta:
         verbose_name = u'Blog'
